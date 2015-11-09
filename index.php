@@ -41,9 +41,10 @@
   for ($x = 0; $x < $rows; $x++){
     echo writeGoodsBox(pg_fetch_result($result , $x , "id") ,
                        pg_fetch_result($result , $x , "varenavn") , 
-                       pg_fetch_result($result , $x , "beholdning"));
+                       pg_fetch_result($result , $x , "beholdning"), FALSE);
   }
   // add NewBox
+  echo writeGoodsBox("","","",TRUE);
   echo writeCommitBox();
   ?>
   </table> 
