@@ -1,6 +1,6 @@
 <?php
 
-function UPDATE_ROW(id, varenavn, beholdning, bemaerkning, medlem , sql_forbindelse, tabel){
+function UPDATE_ROW($id, $varenavn, $beholdning, $bemaerkning, $medlem , $sql_forbindelse, $tabel){
   
   global $conn;
 

@@ -10,16 +10,16 @@ function decreaseAmount(id){}
 
 <?php
 
-function writeGoodsBox(id, navn, beholdning){
+  function writeGoodsBox( $id , $navn , $beholdning){
   $minus   = "minusvare{$id}";
   $plus   = "plusvare{$id}";
   
   $stringo = "<tr>";
-  $stringo  .= '<button id="{$minus}" type="button" onclick="decreaseAmount({$minus});"> - </button>' .
-               '<input type="number" id="{$id}-beh" name="{$id}-beh" value="{$beholdning}"> <br/>' .
-               '<input type="number" id="{$id}-navn" name="{$id}-nav value="{$navn}">' .
-               '<button id="{$plus}" type="button" onclick="increaseAmount({$plus});"> + </button>';
-
+  $stringo  .= "<button id='{$minus}' type='button' onclick='decreaseAmount({$minus});'> - </button>" .
+               "<input type='number' id='{$id}-beh' name='{$id}-beh' value='{$beholdning}'> <br/>" .
+//             "<input type='numbe' id='{$id}-navn' name='{$id}-nav value='{$navn}'>' .
+               "<p>${navn}</p>" . 
+               "<button id='{$plus}' type='button' onclick='increaseAmount({$plus});'> + </button>";
   $stringo .= "</tr>";
 
   return($stringo);
@@ -27,10 +27,16 @@ function writeGoodsBox(id, navn, beholdning){
 
 
 // function writeNewBox()
-
-
 function writeCommitBox(){
+  $stringo = "<tr>";
+  $stringo  .= '<button id="revert" type="button" onclick="refresh();">Nulstil</button>' .
+               '<input type="text" id="kantinemedlem" name="kantinemedlem" placeholder="Navn"> <br/>' .
+               '<input type="text" id="commit-besked" name="commit-besked" placeholder="Bemærkning">' .
+               '<button id="commit" type="Submit">Commit</button>' ; 
+  $stringo .= "</tr>";
 
+  return($stringo);
   }
+
 
 ?>
